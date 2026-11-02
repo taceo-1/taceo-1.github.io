@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — DSA-CPE</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+
+<nav class="top-nav">
+  <button class="hamburger" aria-label="Open menu">☰</button>
+  <div class="top-nav-title">DSA-CPE</div>
+</nav>
+
+<nav class="sidebar">
+ <div class="sidebar-top">
+  <div class="logo">DSA-CPE</div>
+ </div>
+
+ <div class="divider"></div>
+
+ <div class="sidebar-links"> 
+  <a href="index.html" class="link">
+    <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </span>
+    MENU
+  </a>
+
+  <a href="about.html" class="link active">
+      <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="7"/>
+        <path d="M5 21v-3a4 4 0 014-4h6a4 4 0 014 4v3"/>
+      </svg>
+    </span>
+     ABOUT US
+  </a>
+
+  <a href="case-study.html" class="link">
+      <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H19a2.5 2.5 0 012.5 2.5V19.5a2.5 2.5 0 01-2.5 2.5H13"/>
+      </svg>
+    </span>
+    CASE STUDY INFORMATION
+  </a>
+</div>
+
+ <div class="sidebar-footer">
+  DSA-CPE @2025
+ </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+<main>
+  <section class="hero">
+    <h1>About Us</h1>
+    <p>DSA-CPE is dedicated to helping developers and students master Data Structures &amp; Algorithms and excel at competitive programming.</p>
+  </section>
+
+  <section class="about-content">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>We believe that strong problem-solving skills are the foundation of great software engineering. Our goal is to make DSA concepts clear, approachable, and practical.</p>
+    </div>
+    <div class="card">
+      <h3>What We Cover</h3>
+      <ul>
+        <li>Arrays, Strings, and Hashing</li>
+        <li>Linked Lists, Stacks, and Queues</li>
+        <li>Trees and Graphs</li>
+        <li>Recursion and Backtracking</li>
+        <li>Dynamic Programming</li>
+        <li>Sorting and Searching Algorithms</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Get in Touch</h3>
+      <p>Have questions or suggestions? Reach out and let us know how we can help you level up your coding skills.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('mobileOverlay');
+
+  function toggleMenu() {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('.link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    }
+  });
+</script>
+</body>
+</html>

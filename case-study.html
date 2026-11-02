@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study — DSA-CPE</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+
+<nav class="top-nav">
+  <button class="hamburger" aria-label="Open menu">☰</button>
+  <div class="top-nav-title">DSA-CPE</div>
+</nav>
+
+<nav class="sidebar">
+ <div class="sidebar-top">
+  <div class="logo">DSA-CPE</div>
+ </div>
+
+ <div class="divider"></div>
+
+ <div class="sidebar-links"> 
+  <a href="index.html" class="link">
+    <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </span>
+    MENU
+  </a>
+
+  <a href="about.html" class="link">
+      <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="7"/>
+        <path d="M5 21v-3a4 4 0 014-4h6a4 4 0 014 4v3"/>
+      </svg>
+    </span>
+     ABOUT US
+  </a>
+
+  <a href="case-study.html" class="link active">
+      <span class="nav-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5v-15A2.5 2.5 0 016.5 2H19a2.5 2.5 0 012.5 2.5V19.5a2.5 2.5 0 01-2.5 2.5H13"/>
+      </svg>
+    </span>
+    CASE STUDY INFORMATION
+  </a>
+</div>
+
+ <div class="sidebar-footer">
+  DSA-CPE @2025
+ </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+<main>
+  <section class="hero">
+    <h1>Case Study Information</h1>
+    <p>Step-by-step walkthroughs of real algorithmic problems and their solutions.</p>
+  </section>
+
+  <section class="case-studies">
+    <div class="card">
+      <h3>Two Sum</h3>
+      <p><strong>Problem:</strong> Given an array of integers and a target, find indices of two numbers that add up to the target.</p>
+      <p><strong>Solution:</strong> Use a hash map to store seen values and their indices for O(n) lookup.</p>
+      <p><strong>Complexity:</strong> Time O(n), Space O(n)</p>
+    </div>
+    <div class="card">
+      <h3>Valid Parentheses</h3>
+      <p><strong>Problem:</strong> Determine if a string of brackets is valid (properly opened and closed).</p>
+      <p><strong>Solution:</strong> Use a stack to match opening and closing brackets in order.</p>
+      <p><strong>Complexity:</strong> Time O(n), Space O(n)</p>
+    </div>
+    <div class="card">
+      <h3>Maximum Subarray</h3>
+      <p><strong>Problem:</strong> Find the contiguous subarray with the largest sum.</p>
+      <p><strong>Solution:</strong> Kadane's Algorithm — track the running sum and reset when it goes negative.</p>
+      <p><strong>Complexity:</strong> Time O(n), Space O(1)</p>
+    </div>
+  </section>
+</main>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.getElementById('mobileOverlay');
+
+  function toggleMenu() {
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+
+  document.querySelectorAll('.link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+    }
+  });
+</script>
+</body>
+</html>
