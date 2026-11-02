@@ -88,8 +88,9 @@
   const overlay = document.getElementById('mobileOverlay');
 
   function toggleMenu() {
-    sidebar.classList.toggle('open');
+    const isOpen = sidebar.classList.toggle('open');
     overlay.classList.toggle('active');
+    hamburger.classList.toggle('active', isOpen);
   }
 
   hamburger.addEventListener('click', toggleMenu);
@@ -101,6 +102,7 @@
       if (window.innerWidth <= 768) {
         sidebar.classList.remove('open');
         overlay.classList.remove('active');
+        hamburger.classList.remove('active');
       }
     });
   });
@@ -110,6 +112,7 @@
     if (window.innerWidth > 768) {
       sidebar.classList.remove('open');
       overlay.classList.remove('active');
+      hamburger.classList.remove('active');
     }
   });
 </script>
